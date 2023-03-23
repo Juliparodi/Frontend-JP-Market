@@ -1,14 +1,18 @@
 import './App.css';
-import Item from "./Components/Item/item";
-import {useState} from "react";
+import Navbar from "./Components/NavBar/Navbar";
+import ItemListContainer
+  from "./Components/ItemListContainer/ItemListContainer";
 
 function App() {
 
-  const [isSelected, setSelected] = useState(true);
+  //const [isSelected, setSelected] = useState(true);
 
   return (
     <div className="App">
-    <Item isSelected ={isSelected} onSelectedChange = {setSelected} name = 'juli parodi'/>
+      <Navbar />
+      <ItemListContainer greeting={'Welcome!'} additionalComment={'Please click on the buttons to check'
+          + ' our offer and contact us in case of issues!'} />
+      {/*<Item isSelected ={isSelected} onSelectedChange = {setSelected} name = 'juli parodi'/>*/}
     </div>
   );
 }

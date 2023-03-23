@@ -1,0 +1,12 @@
+.cart-image {
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.harcoded-text {
+  text-align: center;
+  justify-content: center;
+}

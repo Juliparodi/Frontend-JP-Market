@@ -1,0 +1,32 @@
+.navbar {
+  background-color: #ffebcd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: #faebd7;
+}
+
+.nav-button {
+  color: #000000;
+  margin-right: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.cart-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
