@@ -1,0 +1,51 @@
+.item-count-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-count {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.count {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 32px;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  padding: 0 8px;
+}
+
+.decrement {
+  color: #999;
+  margin-right: 10px;
+}
+
+.increment {
+  color: #000;
+  margin-left: 10px;
+}
+
+.add {
+  width: 100%;
+  height: 32px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}

@@ -1,11 +1,13 @@
-import cart from './assets/cart.png'
 import './cartWidget.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-const CartWidget = () => {
+const CartWidget = ({quantity}) => {
+
   return (
-      <div className={'harcoded-text'}>
-        <img className={'cart-image'} src={cart} alt={"cart-widget"}/>
-        0
+      <div className="cart-icon">
+        <FontAwesomeIcon icon={faShoppingCart} />
+        {quantity}
       </div>
   )
 }
