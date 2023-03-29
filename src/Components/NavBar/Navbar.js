@@ -3,7 +3,7 @@ import './navbar.css';
 import CartWidget from "../CartWidget/CartWidget";
 import {Nav, Navbar} from "react-bootstrap";
 
-const NavBar = ({quantity}) => {
+const NavBar = ({ cartItems }) => {
   return <Navbar className={'navbar'} bg="light" expand="lg">
     <Navbar.Brand className="navbar-brand">JP Market</Navbar.Brand>
     <Navbar.Collapse id="basic-navbar-nav">
@@ -12,7 +12,7 @@ const NavBar = ({quantity}) => {
         <Button className={'nav-button'}> Tablets </Button>
         <Button className={'nav-button'}> Notebooks </Button>
     </Navbar.Collapse>
-    <CartWidget quantity={quantity}/>
+    <CartWidget quantity={cartItems.length }/>
   </Navbar>
 }
 

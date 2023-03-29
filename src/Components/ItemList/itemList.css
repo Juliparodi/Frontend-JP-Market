@@ -1,0 +1,33 @@
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.item {
+  flex-basis: calc(33.33% - 20px);
+  margin: 0 10px 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.item:not(:last-child) {
+  margin-right: 0;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.item h2 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.item p {
+  font-size: 16px;
+  margin-top: 5px;
+}

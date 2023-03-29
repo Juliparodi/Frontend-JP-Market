@@ -5,6 +5,8 @@
   font-size: 1.1rem;
   margin: 0px auto;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-brand {
