@@ -1,20 +1,12 @@
 .item-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -10px;
+  justify-content: center;
+  align-items: center;
 }
 
-.item {
-  flex-basis: calc(33.33% - 20px);
-  margin: 0 10px 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.item:not(:last-child) {
-  margin-right: 0;
+.container {
+  display: flex;
 }
 
 .item img {

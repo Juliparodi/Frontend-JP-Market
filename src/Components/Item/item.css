@@ -1,8 +1,17 @@
 .card {
+  flex: 0 0 calc(26% - 20px);
+  margin: 0 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex !important;
+  align-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: white;
 }
 
 .card-title {
