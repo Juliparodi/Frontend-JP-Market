@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App background-image">
       <Navbar cartItems={cartItems}/>
       <ItemListContainer greeting={'Welcome!'} additionalComment={'Please click on the buttons to check'
           + ' our offer and contact us in case of issues!'} handleAddToCart={handleAddToCart} />

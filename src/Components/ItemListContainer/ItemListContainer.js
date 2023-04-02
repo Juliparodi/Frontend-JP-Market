@@ -14,7 +14,7 @@ const ItemListContainer = ({greeting, additionalComment, handleAddToCart}) => {
   })
 
   return (
-  <div className='item-container' style={{backgroundImage: "url('background-image.jpg')"}}>
+  <div className='item-container'>
     <h1> {greeting} </h1>
     <h5> {additionalComment}</h5>
     <ItemList items={items} handleAddToCart={handleAddToCart} />

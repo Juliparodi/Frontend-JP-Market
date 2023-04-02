@@ -1,13 +1,17 @@
 
-.cart-icon span {
+.cart-icon span{
   position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 12px;
+  right: 1px;
 }
 
-.cart-icon svg {
-  margin-right: 5px;
+.cart-quantity {
+  position: absolute;
+  top: 25px;
+  right: -10px;
+  padding: 2px 19px;
+  color: white;
+  font-size: 15px;
+  border-radius: 50%;
 }
 
 .cart-icon::before {
@@ -26,12 +30,13 @@
 }
 
 .fa-shopping-cart {
+  color: white;
   font-size: 1.2rem;
   margin-right: 10px;
 }
 
 .svg-inline--fa.fa-cart-shopping {
-  color: black;
-  margin-right: 5px;
-  margin-left: 230px;
+  color: white;
+  margin-right: 15px;
+  margin-left: 200px;
 }

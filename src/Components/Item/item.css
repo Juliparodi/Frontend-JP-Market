@@ -11,12 +11,13 @@
   align-content: space-around;
   align-items: center;
   flex-direction: column;
-  color: white;
+  color: black;
 }
 
 .card-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .card-text {
@@ -27,4 +28,9 @@
 .item-count-container {
   margin-top: 10px;
   text-align: center;
+}
+
+.card-image {
+  height: 250px;
+  margin-bottom: 10px;
 }

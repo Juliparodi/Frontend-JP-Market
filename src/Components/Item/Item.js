@@ -1,8 +1,8 @@
-import { Card } from 'react-bootstrap';
+import {Card, Image} from 'react-bootstrap';
 import ItemCount from "../ItemCount/ItemCount";
 import './item.css'
 import Button from "react-bootstrap/Button";
-
+import {images} from './image'
 
 const Item = ({ item, handleAddToCart }) => {
 
@@ -10,7 +10,7 @@ const Item = ({ item, handleAddToCart }) => {
 
   return (
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={img} />
+        <Image className={'card-image'} src={images[img]} alt="image" />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

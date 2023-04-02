@@ -1,7 +1,8 @@
 .App {
   text-align: center;
-  background-color: #f2f2f2;
   color: #333;
+  background-image: url("background-image.jpg");
+  background-size: cover;
 }
 
 .App-logo {
