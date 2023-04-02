@@ -23,9 +23,9 @@
   justify-content: flex-end;
 }
 
-.nav-button {
+.nav-link {
   align-items: center;
-  color: #000000;
+  color: white;
   margin-right: 15px;
   font-weight: 600;
   text-transform: uppercase;
