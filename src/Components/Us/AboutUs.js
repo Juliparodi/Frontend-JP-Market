@@ -1,7 +1,7 @@
-const Us = () => {
+const AboutUs = () => {
   return <div>
     <h1> Somo nosotro pa' </h1>
   </div>
 }
 
-export default Us;
+export default AboutUs;

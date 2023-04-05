@@ -1,7 +1,7 @@
 .navbar {
-  background-color: #333333;
+  background-color: black;
   box-shadow: 0 4px 4px #f2f2f2;
-  padding: 20px;
+  padding: 10px;
   font-size: 1.1rem;
   margin: 0px auto;
   display: flex;
@@ -17,7 +17,13 @@
   color: white
 }
 
-.navbar-right {
+.navbar-brand img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar-link-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -26,16 +32,17 @@
 .nav-link {
   align-items: center;
   color: white;
-  margin-right: 15px;
+  margin-right: 20px;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: small;
+  font-size: medium;
   text-align: center;
   justify-content: center;
+  text-decoration: none;
 }
 
-.nav-button-left {
-  margin-left: 200px;
+.nav-link-left {
+  margin-left: 150px;
 }
 
 .navbar-collapse {
