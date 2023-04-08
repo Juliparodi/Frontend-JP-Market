@@ -21,7 +21,7 @@ const ItemListContainer = ({ greeting, additionalComment, handleAddToCart }) => 
         console.error(error);
         setIsLoading(false);
       });
-    }, 1000);
+    }, 250);
   }, []);
 
   const handleFilter = (filter) => {

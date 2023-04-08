@@ -3,6 +3,8 @@ import {Container} from "react-bootstrap";
 import './itemList.css'
 
 function ItemList({ items, handleAddToCart }) {
+
+  console.log(items)
   return (
       <Container className='item-list'>
         {items.map((item) => (

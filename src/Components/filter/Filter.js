@@ -43,6 +43,16 @@ const Filter = ({ handleFilter }) => {
             />
             Phone
           </label>
+          <label>
+            <input
+                type="radio"
+                name="filter"
+                value="headphones"
+                checked={selectedOption === "headphones"}
+                onChange={handleOptionChange}
+            />
+            Headphones
+          </label>
         </div>
       </div>
   );

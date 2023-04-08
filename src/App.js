@@ -26,7 +26,7 @@ function App() {
         <div className="App background-image">
           <Navbar cartItems={cartItems}/>
           <Routes>
-            <Route path="/" element={<ItemListContainer greeting={'Welcome!'} additionalComment={'Please click on the buttons to check our offer and contact us in case of issues!'} handleAddToCart={handleAddToCart} />} />
+            <Route path="/" element={<ItemListContainer greeting={'Welcome!'} additionalComment={'Welcome aboard! Check our offers and discounts and contact us for any question.'} handleAddToCart={handleAddToCart} />} />
             <Route path="/us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
