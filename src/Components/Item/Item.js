@@ -1,8 +1,9 @@
-import {Card, Image, Modal, Button} from 'react-bootstrap';
+import {Card, Image, Button} from 'react-bootstrap';
 import ItemCount from "../ItemCount/ItemCount";
 import './item.css'
 import {images} from './image'
 import {useState} from "react";
+import ModalItem from './../Modal/ModalItem'
 
 const Item = ({ item, handleAddToCart }) => {
 
@@ -15,8 +16,8 @@ const Item = ({ item, handleAddToCart }) => {
 
   return (
       <>
-        <Card style={{ width: '18rem' }}>
-          <Image className={'card-image'} src={images[img]} alt="image" />
+        <Card style={{ width: '19rem' }}>
+          <Image variant="top" className={'card-image'} src={images[img]} alt="image" />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>${price}</Card.Text>
@@ -27,24 +28,8 @@ const Item = ({ item, handleAddToCart }) => {
             <ItemCount item={item} stock={10} initial={1} handleAddToCart={handleAddToCart} />
           </Card.Body>
         </Card>
-        <Modal centered show={showModal} onHide={handleCloseModal} backdropClassName={'modal-backdrop'}>
-          <div className={'modal-container'}>
-            <Modal.Header>
-              <Button variant="secondary" onClick={handleCloseModal}>
-                <span aria-hidden="true">&times;</span>
-              </Button>
-              <Modal.Title className={'modal-card-title'}>{name}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body className={'modal-card-text'}>
-              <Image src={images[img]} alt="image" />
-              <p>Price: ${price}</p>
-              <p>Stock: {stock}</p>
-            </Modal.Body>
-            <Modal.Footer>
-              <ItemCount item={item} stock={10} initial={1} handleAddToCart={handleAddToCart} />
-            </Modal.Footer>
-          </div>
-        </Modal>
+        <ModalItem item={item} handleAddToCart={handleAddToCart} showModal={showModal} handleCloseModal={handleCloseModal} />
+
       </>
   );
 };

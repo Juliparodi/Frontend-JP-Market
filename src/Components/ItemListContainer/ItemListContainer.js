@@ -11,7 +11,6 @@ const ItemListContainer = ({ greeting, additionalComment, handleAddToCart }) => 
   const [selectedFilter, setSelectedFilter] = useState("all");
 
   useEffect(() => {
-    setTimeout(() => {
       getItems()
       .then((response) => {
         setItems(response);
@@ -21,7 +20,6 @@ const ItemListContainer = ({ greeting, additionalComment, handleAddToCart }) => 
         console.error(error);
         setIsLoading(false);
       });
-    }, 250);
   }, []);
 
   const handleFilter = (filter) => {

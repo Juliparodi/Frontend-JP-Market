@@ -5,6 +5,11 @@ import logo from './JP-Market.png'
 import {Link} from "react-router-dom";
 
 const NavBar = ({ cartItems }) => {
+
+  const isActive = (match, location) => {
+    return match && !match.isExact;
+  };
+
   return <Navbar className={'navbar'} bg="light" expand="lg">
     <Navbar.Brand className="navbar-brand">
       <img src={logo} alt="JP Market" />
@@ -12,9 +17,9 @@ const NavBar = ({ cartItems }) => {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="navbar-right"></Nav>
       <Nav className="mr-auto">
-        <Link to="/" className={'nav-link'} activeClassName="active">Home</Link>
-        <Link to="/us" className={'nav-link'} activeClassName="active"> About Us</Link>
-        <Link to="/contact" className={'nav-link'} activeClassName="active">Contact</Link>
+        <Link to="/" className={isActive ? 'active nav-link' : 'nav-link'}>Home</Link>
+        <Link to="/us" className={isActive ? 'active nav-link' : 'nav-link'}> About Us</Link>
+        <Link to="/contact" className={isActive ? 'active nav-link' : 'nav-link'}>Contact</Link>
       </Nav>
     </Navbar.Collapse>
     <CartWidget quantity={cartItems.length }/>

@@ -1,0 +1,28 @@
+.about-us-container {
+  padding: 50px 0;
+}
+
+.about-us-header {
+  margin-bottom: 50px;
+}
+
+.about-us-header h1 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.about-us-body {
+  margin-top: 50px;
+}
+
+.about-us-image {
+  height: 400px;
+  width: 700px;
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .about-us-body {
+    flex-direction: column;
+  }
+}
