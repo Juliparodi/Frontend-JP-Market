@@ -36,3 +36,9 @@
   object-fit: cover;
 }
 
+.Option {
+  color: gray;
+  text-decoration: none;
+  border-bottom: none;
+}
+

@@ -10,6 +10,8 @@ import ItemListContainer
 import {useState} from "react";
 import Contact from "./Components/Contact/contact";
 import AboutUs from "./Components/Us/AboutUs";
+import ItemDetailContainer
+  from "./Components/ItemDetailContainer/ItemDetailContainer";
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
             <Route path="/" element={<ItemListContainer greeting={'Welcome!'} additionalComment={'Welcome aboard! Check our offers and discounts and contact us for any question.'} handleAddToCart={handleAddToCart} />} />
             <Route path="/us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
           </Routes>
         </div>
       </BrowserRouter>
