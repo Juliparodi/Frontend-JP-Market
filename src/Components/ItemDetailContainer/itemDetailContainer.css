@@ -1,0 +1,5 @@
+.item-detail-container {
+  align-items: center;
+  display: flex !important;
+  justify-content: center
+}

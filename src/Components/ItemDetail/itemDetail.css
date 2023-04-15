@@ -1,0 +1,42 @@
+.card {
+  flex: 0 0 calc(26% - 20px);
+  margin: 0 10px;
+  padding: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex !important;
+  align-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  margin-bottom: 300px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.item-count-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-image {
+  max-height: 250px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.Option {
+  color: gray;
+  text-decoration: none;
+  border-bottom: none;
+}
+

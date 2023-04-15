@@ -1,9 +1,9 @@
 import {Container} from "react-bootstrap";
-import Item from "../Item/Item";
 import {useEffect, useState} from "react";
 import {getItemById} from "../../resources/productsMock";
 import './itemDetailContainer.css'
 import {useParams} from "react-router";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer({handleAddToCart }) {
 
@@ -21,7 +21,7 @@ function ItemDetailContainer({handleAddToCart }) {
 
   return (
       <Container className='item-detail-container'>
-        {item ? <Item key={item.id} item={item} handleAddToCart={handleAddToCart} /> : <p>Loading...</p>}
+        {item ? <ItemDetail key={item.id} item={item} handleAddToCart={handleAddToCart} /> : <p>Loading...</p>}
       </Container>
   );
 }
