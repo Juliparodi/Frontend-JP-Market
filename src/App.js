@@ -31,7 +31,7 @@ function App() {
             <Route path="/" element={<ItemListContainer greeting={'Welcome!'} additionalComment={'Welcome aboard! Check our offers and discounts and contact us for any question.'} handleAddToCart={handleAddToCart} />} />
             <Route path="/us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+            {/*<Route path="/item/:itemId" element={<ItemDetailContainer />} />*/}
           </Routes>
         </div>
       </BrowserRouter>

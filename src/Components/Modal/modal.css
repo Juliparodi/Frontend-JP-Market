@@ -2,6 +2,21 @@
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+.modal-botton {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  margin-left: 15px;
+  height: 50px;
+  width: 40px;
+  padding-top: 1rem;
+}
+
+.x {
+  height: 40px !important;;
+  width: 30px !important;;
+}
+
 .modal-dialog {
   margin: 0 auto;
   display: flex;
@@ -16,6 +31,7 @@
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid #ccc;
   border-radius: 5px;
+  overflow-y: auto;
 }
 
 .modal-header {
@@ -46,4 +62,16 @@
 
 .modal-container {
   background-color: white;
+  height: auto;
+  padding-top: 5rem;
+  width: 500px;
+}
+
+.payment-method {
+  height: 75px;
+  width: 270px;
+}
+
+.shipping {
+  color: limegreen;
 }
