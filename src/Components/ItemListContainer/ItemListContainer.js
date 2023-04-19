@@ -1,10 +1,13 @@
 import ItemList from "../ItemList/ItemList";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {getItems} from "../../resources/productsMock";
 import './itemListContainer.css'
 import Filter from './../filter/Filter'
+import {CartContext} from "../context/CartContext";
 
-const ItemListContainer = ({ greeting, additionalComment, handleAddToCart }) => {
+const ItemListContainer = ({ greeting, additionalComment }) => {
+
+  const { handleAddToCart } = useContext(CartContext);
 
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -38,8 +41,7 @@ const ItemListContainer = ({ greeting, additionalComment, handleAddToCart }) => 
           ) : (
               <ItemList items={items.filter((item) =>
                   selectedFilter === "all" ? true : item.category === selectedFilter
-              )}
-                        handleAddToCart={handleAddToCart} />
+              )}/>
           )}
         </div>
       </div>

@@ -1,13 +1,17 @@
 import Item from "../Item/Item";
 import {Container} from "react-bootstrap";
 import './itemList.css'
+import {useContext} from "react";
+import {CartContext} from "../context/CartContext";
 
-function ItemList({ items, handleAddToCart }) {
+function ItemList({ items }) {
+
+  const { handleAddToCart } = useContext(CartContext);
 
   return (
       <Container className='item-list'>
         {items.map((item) => (
-            <Item key={item.id} item={item} handleAddToCart={handleAddToCart} />
+            <Item key={item.id} item={item} />
         ))}
       </Container>
   );

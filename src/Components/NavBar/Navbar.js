@@ -3,10 +3,14 @@ import CartWidget from "../CartWidget/CartWidget";
 import {Nav, Navbar} from "react-bootstrap";
 import logo from './JP-Market.png'
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import {CartContext} from "../context/CartContext";
 
-const NavBar = ({ cartItems }) => {
+const NavBar = () => {
 
-  const isActive = (match, location) => {
+  const { handleAddToCart } = useContext(CartContext);
+
+  const isActive = (match) => {
     return match && !match.isExact;
   };
 
@@ -22,7 +26,7 @@ const NavBar = ({ cartItems }) => {
         <Link to="/contact" className={isActive ? 'active nav-link' : 'nav-link'}>Contact</Link>
       </Nav>
     </Navbar.Collapse>
-    <CartWidget quantity={cartItems.length }/>
+    <CartWidget />
   </Navbar>
 }
 
