@@ -30,7 +30,7 @@ const ModalItem = ({ item, handleAddToCart, showModal, handleCloseModal }) => {
             <p>Stock: {stock}</p>
           </Modal.Body>
           <Modal.Footer>
-            <ItemCount item={item} stock={10} initial={1}
+            <ItemCount item={item} stock={10} initial={0}
                        handleAddToCart={handleAddToCart}/>
           </Modal.Footer>
         </div>

@@ -1,6 +1,6 @@
 import "./ItemCount.css";
 import {useContext, useState} from "react";
-import {CartContext} from "../context/CartContext";
+import {CartContext} from "../../context/CartContext";
 
 const ItemCount = ({ item, stock, initial }) => {
   const [quantity, setQuantity] = useState(initial);

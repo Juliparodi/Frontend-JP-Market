@@ -17,10 +17,58 @@
   color: white
 }
 
+.dropdown-toggle {
+  background-color: black !important;
+  border: none !important;
+}
+
 .navbar-brand img {
   height: 50px;
   width: auto;
   margin-right: 10px;
+}
+
+.cart-item-img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+
+.cart-item-detail {
+  display: flex;
+  flex: 1;
+  padding: 0 20px;
+  flex-direction: column;
+  color: white
+}
+
+.navbar .dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  color: white;
+  vertical-align: middle;
+  margin-left: 0.3em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+.badge {
+  background-color: black;
+  color: white;
+  margin-left: 5px;
+  height: 15px;
+  display: inline-block;
 }
 
 .navbar-link-right {

@@ -2,11 +2,9 @@ import Item from "../Item/Item";
 import {Container} from "react-bootstrap";
 import './itemList.css'
 import {useContext} from "react";
-import {CartContext} from "../context/CartContext";
+import {CartContext} from "../../context/CartContext";
 
 function ItemList({ items }) {
-
-  const { handleAddToCart } = useContext(CartContext);
 
   return (
       <Container className='item-list'>

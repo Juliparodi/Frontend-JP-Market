@@ -3,11 +3,8 @@ import {useContext, useEffect, useState} from "react";
 import {getItems} from "../../resources/productsMock";
 import './itemListContainer.css'
 import Filter from './../filter/Filter'
-import {CartContext} from "../context/CartContext";
 
 const ItemListContainer = ({ greeting, additionalComment }) => {
-
-  const { handleAddToCart } = useContext(CartContext);
 
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

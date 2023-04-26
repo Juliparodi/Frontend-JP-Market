@@ -1,5 +1,4 @@
 import './App.css';
-import Navbar from "./Components/NavBar/Navbar";
 import {
   Routes,
   Route,
@@ -12,7 +11,9 @@ import Contact from "./Components/Contact/contact";
 import AboutUs from "./Components/Us/AboutUs";
 import ItemDetailContainer
   from "./Components/ItemDetailContainer/ItemDetailContainer";
-import {CartProvider} from "./Components/context/CartContext";
+import {CartProvider} from "./context/CartContext";
+import Cart from "./Components/Cart/Cart";
+import NavBar from "./Components/NavBar/NavBar";
 
 
 function App() {
@@ -21,12 +22,13 @@ function App() {
       <BrowserRouter>
         <div className="App background-image">
           <CartProvider>
-            <Navbar />
+            <NavBar />
               <Routes>
                 <Route path="/" element={<ItemListContainer greeting={'Welcome!'} additionalComment={'Welcome aboard! Check our offers and discounts and contact us for any question.'} />} />
                 <Route path="/us" element={<AboutUs />} />
                 <Route path="/contact" element={<Contact />} />
-            {/*<Route path="/item/:itemId" element={<ItemDetailContainer />} />*/}
+                <Route path="/cart" element={<Cart />} />
+                {/*<Route path="/item/:itemId" element={<ItemDetailContainer />} />*/}
              </Routes>
           </CartProvider>
         </div>
