@@ -1,0 +1,197 @@
+.cart-container {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  min-height: 100vh;
+}
+
+.cart-title-cart {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cart-empty {
+  font-size: 18px;
+  color: #888;
+  margin-top: 10px;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+  margin-left: 300px;
+}
+
+.cart-item-img-cart {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.cart-item-cart {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+
+.cart-item-detail {
+  display: flex;
+  flex: 1;
+  padding: 0 20px;
+  flex-direction: column;
+}
+
+.cart-remove-btn {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.cart-total-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cart-clear-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 330px;
+}
+
+.cart-pay-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-right: 330px;
+}
+
+.billing-info form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.billing-info div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.billing-info {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.billing-info h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.billing-info label {
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.billing-info label span {
+  margin-right: 10px;
+  width: 100px; /* adjust the width as necessary */
+}
+
+.billing-info label:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.billing-info input {
+  display: block;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+.billing-info button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.billing-info button:hover {
+  background-color: #0069d9;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-info form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-info label {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.payment-info label input[type="radio"] {
+  margin-right: 10px;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-info-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.payment-info input {
+  display: block;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}

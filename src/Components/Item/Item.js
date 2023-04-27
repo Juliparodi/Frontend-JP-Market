@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import './item.css'
 import {images} from './image'
 import {Link} from "react-router-dom";
-import ModalItem from "../Modal/ModalItem";
+import ModalItem from "../ModalItem/ModalItem";
 import {useContext, useState} from "react";
 import {CartContext} from "../../context/CartContext";
 
