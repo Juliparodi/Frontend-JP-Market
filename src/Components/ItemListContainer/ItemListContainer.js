@@ -3,6 +3,20 @@ import {useContext, useEffect, useState} from "react";
 import {getItems} from "../../resources/productsMock";
 import './itemListContainer.css'
 import Filter from './../filter/Filter'
+import { db } from "../../Configuration/firebase";
+import { getDocs, collection, addDoc } from "firebase/firestore";
+
+const getProducts = async () => {
+  const productsCollection = collection(db, "Item");
+  const productsDocsRef = await getDocs(productsCollection);
+  const productDocs = productsDocsRef.docs;
+  const products = productDocs.map((doc) => {
+    return { ...doc.data(), id: doc.id };
+  });
+  console.log(products);
+  return products;
+};
+
 
 const ItemListContainer = ({ greeting, additionalComment }) => {
 

@@ -1,16 +1,25 @@
 .cart-container {
-  margin: 0;
   padding: 20px;
   border: 1px solid #ccc;
-  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
 }
 
-.cart-title-cart {
-  font-size: 34px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+.whole-container {
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex: 1;
+  margin-right: 10px
 }
 
 .cart-empty {
@@ -22,29 +31,85 @@
 .cart-list {
   list-style: none;
   padding: 0;
-  margin-top: 50px;
-  margin-left: 300px;
+  border-bottom: 2px solid black;
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+  width: 450px;
+  height: 500px;
+}
+
+.cart-container span {
+  margin-top: 20px;
+}
+
+.cart-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .cart-item-img-cart {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 49px;
   object-fit: cover;
 }
 
 .cart-item-cart {
   display: flex;
   align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   margin: 0 20px;
   margin-bottom: 20px;
 }
 
-.cart-item-detail {
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+
+.cart-item-cart li{
+  display: flex;
+  margin-bottom: 20px;
+  align-items: baseline;
+}
+
+.original-price {
+  text-decoration: line-through;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.discounted-price {
+  color: red;
+  font-weight: bold;
+}
+
+.cart-item-detail-cart {
   display: flex;
   flex: 1;
   padding: 0 20px;
   flex-direction: column;
+  color: black;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cart-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .cart-remove-btn {
@@ -71,7 +136,7 @@
   border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
-  margin-left: 330px;
+  margin-left: 50px;
 }
 
 .cart-pay-btn {
@@ -82,7 +147,7 @@
   border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
-  margin-right: 330px;
+  margin-right: 50px;
 }
 
 .billing-info form {
@@ -100,13 +165,14 @@
 
 .billing-info {
   padding: 20px;
-  margin-bottom: 20px;
+  flex: 1 1 40%;
 }
 
 .billing-info h3 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 .billing-info label {
@@ -171,11 +237,6 @@
 
 .payment-info label input[type="radio"] {
   margin-right: 10px;
-}
-
-.cart-buttons {
-  display: flex;
-  justify-content: space-between;
 }
 
 .payment-info-div {

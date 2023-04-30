@@ -20,7 +20,8 @@ const ItemCount = ({ item, stock, initial }) => {
   };
 
   const addToCart = () => {
-    handleAddToCart(item);
+    handleAddToCart(item, quantity);
+    setQuantity(0);
   };
 
   return (

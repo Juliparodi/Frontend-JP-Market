@@ -18,8 +18,38 @@
 }
 
 .dropdown-toggle {
-  background-color: black !important;
-  border: none !important;
+  background-color: black;
+  border: none;
+  margin-right: 30px;
+}
+
+.navbar .dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  color: white;
+  vertical-align: middle;
+  margin-left: 0.3em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  min-width: 370px;
+  padding: 10px;
+  margin: 5px 0 0;
+  font-size: 14px;
+  text-align: left;
+  background-color: darkslategray;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  color: white;
 }
 
 .navbar-brand img {
@@ -49,18 +79,6 @@
   padding: 0 20px;
   flex-direction: column;
   color: white
-}
-
-.navbar .dropdown-toggle::after {
-  content: "";
-  display: inline-block;
-  width: 0;
-  color: white;
-  vertical-align: middle;
-  margin-left: 0.3em;
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-left: 0.3em solid transparent;
 }
 
 .badge {
@@ -99,6 +117,17 @@
 
 .cart-image {
   margin-left: 200px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.discounted-price {
+  color: red;
+  font-weight: bold;
 }
 
 

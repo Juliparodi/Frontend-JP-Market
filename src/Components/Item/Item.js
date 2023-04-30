@@ -9,11 +9,10 @@ import {CartContext} from "../../context/CartContext";
 
 const Item = ({ item }) => {
 
-  const { handleAddToCart } = useContext(CartContext); // Get handleAddToCart from CartContext
+  const { handleAddToCart, discountedIds } = useContext(CartContext); // Get handleAddToCart from CartContext
 
 
-  const { name, price, img, stock } = item;
-
+  const { id, name, price, img, stock } = item;
 
   const [showModal, setShowModal] = useState(false);
   const handleShowModal = () => setShowModal(true);
@@ -26,10 +25,17 @@ const Item = ({ item }) => {
           <Image variant="top" className={'card-image'} src={images[img]} alt="image" />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-            <Card.Text>${price}</Card.Text>
-            <Card.Text>Stock disponible: {stock}</Card.Text>
+            {discountedIds.includes(parseInt(id)) ? (
+                <>
+                  <Card.Text className="original-price">${price}</Card.Text>
+                  <span className="discounted-price">${(price - (price * 0.10)).toFixed(2)}</span>
+                </>
+            ) : (
+                <Card.Text>${price}</Card.Text>
+            )}
+            <Card.Text>Stock available: {stock}</Card.Text>
             <Card.Footer>
-              <Button onClick={handleShowModal}>Ver Detalle</Button>
+              <Button onClick={handleShowModal}>See details</Button>
               {/*<Link to={`/item/${id}`} className={'Option'}>Ver Detalle</Link>*/}
             </Card.Footer>
             <ItemCount item={item} stock={10} initial={0} />

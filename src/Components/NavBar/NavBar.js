@@ -1,5 +1,5 @@
 import './navbar.css';
-import { Badge, Button, Dropdown, Nav, Navbar } from "react-bootstrap";
+import {Badge, Button, Card, Dropdown, Nav, Navbar} from "react-bootstrap";
 import logo from './JP-Market.png'
 import { Link } from "react-router-dom";
 import {useContext, useState} from "react";
@@ -11,21 +11,21 @@ import { images } from './../Item/image'
 const NavBar = () => {
 
 
-  const { items } = useContext(CartContext);
+  const { items, discountedIds} = useContext(CartContext);
 
   const [showCartMenu, setShowCartMenu] = useState(false);
 
   const handleCartMenuToggle = (isOpen) => {
-    console.log('pase x aca')
-    console.log("handleCartMenuToggle", isOpen);
     setShowCartMenu(isOpen);
   };
 
   const handleGoToCartClick = () => {
-    console.log('dejo el cart en false')
     setShowCartMenu(false);
   };
 
+  function getWording(item) {
+    return item.quantity === 1 ? `${item.name}` : `${item.name} (${item.quantity})`;
+  }
 
   const isActive = (match) => {
     return match && !match.isExact;
@@ -46,7 +46,7 @@ const NavBar = () => {
             <Link to="/contact" className={isActive ? 'active nav-link' : 'nav-link'}>Contact</Link>
           </Nav>
         </Navbar.Collapse>
-        <Dropdown show={showCartMenu} onToggle={handleCartMenuToggle}>
+        <Dropdown className={'dropdown'} show={showCartMenu} onToggle={handleCartMenuToggle}>
           <Dropdown.Toggle variant="success" className="dropdown-toggle">
             <FaShoppingCart color="white" fontSize="25px" />
             <Badge>{!items ? 0 : items.length}</Badge>
@@ -63,8 +63,15 @@ const NavBar = () => {
                       alt={item.name}
                   />
                   <div className="cart-item-detail">
-                    <span>{item.name}</span>
-                    <span>₹ {item.price}</span>
+                    <span>{getWording(item)}</span>
+                    {discountedIds.includes(parseInt(item.id)) ? (
+                        <>
+                          <span className="original-price">${(item.price * item.quantity).toFixed(2)}</span>
+                          <span className="discounted-price">${((item.price - (item.price * 0.10)) * item.quantity).toFixed(2)}</span>
+                        </>
+                    ) : (
+                        <span>₹ ${(item.price * item.quantity).toFixed(2)}</span>
+                    )}
                   </div>
                 </span>
                       ))}
