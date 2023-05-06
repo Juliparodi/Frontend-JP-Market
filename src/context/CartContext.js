@@ -19,7 +19,8 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const discountedIds = [2, 4, 8, 11, 16, 18];
+  const discountedIds = ['2', '4', '8', '11', '16', '18',
+    '6zndGN4JWZFWTfO0uxJ4', 'KygNO71EAY7gDYsN3V3g', 'wq6aq3kMD9aGxms3PUpS'];
 
   const removeFromCart = (item) => {
     setCartItems((prevCartItems) => prevCartItems.filter((cartItem) => cartItem.id !== item.id));

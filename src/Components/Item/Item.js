@@ -25,7 +25,7 @@ const Item = ({ item }) => {
           <Image variant="top" className={'card-image'} src={images[img]} alt="image" />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-            {discountedIds.includes(parseInt(id)) ? (
+            {discountedIds.includes(id) ? (
                 <>
                   <Card.Text className="original-price">${price}</Card.Text>
                   <span className="discounted-price">${(price - (price * 0.10)).toFixed(2)}</span>

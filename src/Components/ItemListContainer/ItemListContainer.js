@@ -25,13 +25,16 @@ const ItemListContainer = ({ greeting, additionalComment }) => {
   const [selectedFilter, setSelectedFilter] = useState("all");
 
   useEffect(() => {
-      getItems()
+    getProducts()
       .then((response) => {
-        setItems(response);
+        let res = [];
+        for (let i = 0; i < 4; i++) {
+          res = res.concat(response);
+        }
+        setItems(res);
         setIsLoading(false);
       })
       .catch((error) => {
-        console.error(error);
         setIsLoading(false);
       });
   }, []);
