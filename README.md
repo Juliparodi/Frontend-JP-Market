@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# About the project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+E-commerce of technology products (some with discounts) with customer support!
+This APP is hosted in Firebase
+Productive URL: https://jp-market-1944d.firebaseapp.com/
 
 ## Available Scripts
 
