@@ -1,19 +1,41 @@
+import iphone11 from './assets/phones/iphone11.jpg'
+import iphone12 from './assets/phones/iphone12.jpg'
+import iphone13 from './assets/phones/iphone13.jpg'
+import iphone14 from './assets/phones/iphone14.jpg'
+
+import samsung1 from './assets/phones/samsung1.jpg'
+import samsung2 from './assets/phones/samsung2.jpg'
+import samsung3 from './assets/phones/samsung3.jpg'
+
+import motorola1 from './assets/phones/motorola1.jpg'
+import motorola2 from './assets/phones/motorola2.jpg'
+
+import notebook1 from './assets/notebooks/notebook1.jpg'
+import notebook2 from './assets/notebooks/notebook2.jpg'
+import notebook3 from './assets/notebooks/notebook3.jpg'
+import notebook4 from './assets/notebooks/notebook4.jpg'
+
+import auri1 from './assets/headphones/auri1.jpg'
+import auri2 from './assets/headphones/auri2.jpg'
+import auri3 from './assets/headphones/auri3.jpg'
+import auri4 from './assets/headphones/auri4.jpg'
+
 export const images = {
-  iphone11: require('./assets/phones/iphone11.jpg'),
-  iphone12: require('./assets/phones/iphone12.jpg'),
-  iphone13: require('./assets/phones/iphone13.jpg'),
-  iphone14: require('./assets/phones/iphone14.jpg'),
-  samsung1: require('./assets/phones/samsung1.jpg'),
-  samsung2: require('./assets/phones/samsung2.jpg'),
-  samsung3: require('./assets/phones/samsung3.jpg'),
-  motorola1: require('./assets/phones/motorola1.jpg'),
-  motorola2: require('./assets/phones/motorola2.jpg'),
-  notebook1: require('./assets/notebooks/notebook1.jpg'),
-  notebook2: require('./assets/notebooks/notebook2.jpg'),
-  notebook3: require('./assets/notebooks/notebook3.jpg'),
-  notebook4: require('./assets/notebooks/notebook4.jpg'),
-  auri1: require('./assets/headphones/auri1.jpg'),
-  auri2: require('./assets/headphones/auri2.jpg'),
-  auri3: require('./assets/headphones/auri3.jpg'),
-  auri4: require('./assets/headphones/auri4.jpg'),
-};
+  iphone11,
+  iphone12,
+  iphone13,
+  iphone14,
+  samsung1,
+  samsung2,
+  samsung3,
+  motorola1,
+  motorola2,
+  notebook1,
+  notebook2,
+  notebook3,
+  notebook4,
+  auri1,
+  auri2,
+  auri3,
+  auri4,
+}

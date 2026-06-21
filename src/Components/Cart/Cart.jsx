@@ -65,7 +65,6 @@ const Cart = () => {
         return;
       }
 
-      // 2. Place Order
       const orderLineItemsDtoList = items.map(item => ({
         skuCode: generateSkuCode(item),
         price: item.price,
@@ -75,7 +74,6 @@ const Cart = () => {
       const orderRequest = { orderLineItemsDtoList };
       await placeOrder(orderRequest);
 
-      // 3. Success
       setShowCongrats(true);
       clearCart();
     } catch (error) {

@@ -1,36 +1,27 @@
 import axios from 'axios';
 
-let accessToken = null;
-
-export const getAccessToken = async () => {
-    if (accessToken) return accessToken;
-
+export const getTokenWithCode = async (code, codeVerifier) => {
     const tokenUrl = import.meta.env.VITE_KEYCLOAK_TOKEN_URL;
     const clientId = import.meta.env.VITE_KEYCLOAK_CLIENT_ID;
-    const clientSecret = import.meta.env.VITE_KEYCLOAK_CLIENT_SECRET;
-
-    // Create Base64 encoded credentials for Basic Auth
-    const credentials = btoa(`${clientId}:${clientSecret}`);
+    const redirectUri = import.meta.env.VITE_REDIRECT_URI;
 
     const params = new URLSearchParams();
-    params.append('grant_type', 'client_credentials');
+    params.append('grant_type', 'authorization_code');
+    params.append('client_id', clientId);
+    params.append('code', code);
+    params.append('redirect_uri', redirectUri);
+    params.append('code_verifier', codeVerifier);
 
     try {
         const response = await axios.post(tokenUrl, params, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Authorization': `Basic ${credentials}`
-            }
+            },
         });
 
-        accessToken = response.data.access_token;
-        return accessToken;
+        return response.data.access_token;
     } catch (error) {
-        console.error("Failed to obtain OAuth 2.0 token", error);
+        console.error('Token exchange failed', error);
         throw error;
     }
-};
-
-export const clearAccessToken = () => {
-    accessToken = null;
 };
