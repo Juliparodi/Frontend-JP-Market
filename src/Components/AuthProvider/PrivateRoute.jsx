@@ -1,14 +1,16 @@
-import { useAuth } from './AuthProvider';
+import { useKeycloak } from '@react-keycloak/web';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
-    const { authenticated, initialized} = useAuth();
+    const { keycloak, initialized } = useKeycloak();
     const location = useLocation();
 
+    // WAIT for Keycloak
+    if (!initialized) {
+        return null; // or loading spinner
+    }
 
-    if (!initialized) return null; // or loading spinner
-
-    if (!authenticated) {
+    if (!keycloak.authenticated) {
         return (
             <Navigate
                 to="/login"

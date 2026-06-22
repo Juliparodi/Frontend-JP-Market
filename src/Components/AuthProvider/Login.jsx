@@ -1,20 +1,16 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useAuth } from './AuthProvider';
+import { useKeycloak } from '@react-keycloak/web';
 
 const Login = () => {
-    const { login } = useAuth();
-    const location = useLocation();
+    const { keycloak } = useKeycloak();
 
     useEffect(() => {
-        const from = location.state?.from?.pathname || '/';
+        keycloak.login({
+            redirectUri: window.location.origin + '/cart',
+        });
+    }, [keycloak]);
 
-        sessionStorage.setItem('redirect_after_login', from);
-
-        login();
-    }, []);
-
-    return <div>Redirecting to login...</div>;
+    return <div>Redirecting...</div>;
 };
 
 export default Login;

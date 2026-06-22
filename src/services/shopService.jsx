@@ -1,4 +1,4 @@
-import apiClient, {authRequest} from './api';
+import apiClient from './api';
 
 export const getProducts = async () => {
     const response = await apiClient.get('/api/product/all');
@@ -29,7 +29,7 @@ export const checkInventory = async (skuCodes) => {
 };
 
 export const placeOrder = async (orderRequest) => {
-    const response = await apiClient.post('/api/order', orderRequest, authRequest({}));
+    const response = await apiClient.post('/api/order', orderRequest);
     return response.data;
 };
 
