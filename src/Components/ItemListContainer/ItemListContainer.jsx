@@ -34,7 +34,7 @@ const ItemListContainer = ({ greeting, additionalComment }) => {
               <p>Loading... please wait in just seconds you will see list of products! </p>
           ) : (
               <ItemList items={items.filter((item) =>
-                  selectedFilter === "all" ? true : item.category === selectedFilter
+                  selectedFilter === "all" ? true : item.category.name === selectedFilter
               )}/>
           )}
         </div>

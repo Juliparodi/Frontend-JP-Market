@@ -54,19 +54,9 @@ const Cart = () => {
     setShowCongrats(false);
 
     try {
-      // 1. Check Inventory
-      const skuCodes = items.map(item => generateSkuCode(item));
-      const inventoryResponses = await checkInventory(skuCodes);
-      
-      const outOfStockItems = inventoryResponses.filter(res => !res.isInStock).map(res => res.skuCode);
-      if (outOfStockItems.length > 0) {
-        setCheckoutError(`Some items are out of stock: ${outOfStockItems.join(", ")}`);
-        setIsProcessing(false);
-        return;
-      }
 
       const orderLineItemsDtoList = items.map(item => ({
-        skuCode: generateSkuCode(item),
+        skuCode: item.skuCode,
         price: item.price,
         quantity: item.quantity
       }));
