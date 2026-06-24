@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {CartContext} from "../../context/CartContext";
 import './cart.css'
 import {images} from "../Item/image";
+import { placeOrder, checkInventory, generateSkuCode } from "../../services/shopService";
 
 const Cart = () => {
 
@@ -9,7 +10,8 @@ const Cart = () => {
   const { removeFromCart, clearCart, discountedIds } = useContext(CartContext);
 
   const [showCongrats, setShowCongrats] = useState(false);
-  const handleShowCongrats = () => setShowCongrats(true);
+  const [checkoutError, setCheckoutError] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
 
   useEffect(() => {
     setShowCongrats(false);
@@ -44,6 +46,33 @@ const Cart = () => {
   function getWording(item) {
     return item.quantity === 1 ? `${item.name}` : `${item.name} (${item.quantity})`;
   }
+
+  const handleCheckout = async () => {
+    if (items.length === 0) return;
+    setIsProcessing(true);
+    setCheckoutError("");
+    setShowCongrats(false);
+
+    try {
+
+      const orderLineItemsDtoList = items.map(item => ({
+        skuCode: item.skuCode,
+        price: item.price,
+        quantity: item.quantity
+      }));
+
+      const orderRequest = { orderLineItemsDtoList };
+      await placeOrder(orderRequest);
+
+      setShowCongrats(true);
+      clearCart();
+    } catch (error) {
+      console.error("Checkout failed", error);
+      setCheckoutError("Checkout failed. Please try again later.");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
 
   return (
     <div className={'whole-container'}>
@@ -150,14 +179,19 @@ const Cart = () => {
               </div>
             </form>
             {
-              showCongrats ? (
+              showCongrats && (
                   <h2 style={{ color: 'green' }}> Congratulations for the purchase! Details has been sent to the email. </h2>
-              ) : null
+              )
+            }
+            {
+              checkoutError && (
+                  <h2 style={{ color: 'red' }}> {checkoutError} </h2>
+              )
             }
           </div>
         </div>
         <div className={'cart-items-container'}>
-          {items.length === 0 ? (
+          {items.length === 0 && !showCongrats ? (
               <p className={'cart-empty'}>Cart is empty, don't forget to add products and take advantage of discounts!</p>
           ) : (
               <ul className={'cart-list'}>
@@ -191,7 +225,7 @@ const Cart = () => {
           <p className={'cart-total-price'}> Total Price: ${getTotalPrice()}</p>
           <div className={'cart-buttons'}>
             <button className={'cart-clear-btn'} onClick={() => clearCart()}>Clear Cart</button>
-            <button className={'cart-pay-btn'} onClick={handleShowCongrats}> Pay </button>
+            <button className={'cart-pay-btn'} onClick={handleCheckout} disabled={isProcessing || items.length === 0}> {isProcessing ? "Processing..." : "Pay"} </button>
           </div>
         </div>
       </div>
